@@ -1,0 +1,97 @@
+body {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	background-color: #000000;
+	font-family: sans-serif;
+	font-size: 16px;
+	margin: 0;
+	padding: 0;
+	max-width: 100vw;
+	max-height: 100vh;
+	grid-template-areas:
+		'top-left cover-image'
+		'top-left audio-info'
+		'centered-container centered-container';
+}
+
+#top-right-square {
+	grid-area: top-left;
+	position: fixed;
+	top: 5%;
+	left: 5%;
+	width: 400px;
+	height: 50px;
+	border-radius: 20px;
+	background-color: #00f;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	z-index: 1;
+}
+
+.buttons-container {
+	display: flex;
+	flex-direction: row;
+	z-index: 2;
+}
+
+button {
+	padding: 10px 20px;
+	margin: 0 10px;
+	border: none;
+	cursor: pointer;
+	border-radius: 10px;
+	transition: background-color 0.3s, transform 0.1s; /* Added transition properties */
+}
+
+button:hover {
+	background-color: #312f2e; /* Change color on hover */
+}
+
+button:active {
+	transform: scale(0.9); /* Add a click animation */
+}
+
+#coverImage {
+	grid-area: cover-image;
+	position: fixed;
+	top: 20%; /* Vertically center */
+	left: 50%; /* Horizontally center */
+	transform: translate(-50%, -50%); /* Adjust position relative to its own size */
+	width: 200px;
+	height: 200px;
+	border-radius: 20px;
+	background-color: #00f;
+	z-index: 1;
+}
+
+#audio-info {
+	grid-area: audio-info;
+	position: fixed;
+	text-align: center;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #333;
+	width: 400px;
+	height: 150px;
+}
+
+#centered-container {
+	grid-area: centered-container;
+	padding: 20px;
+	position: fixed;
+	top: 60%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #333;
+	width: 95%;
+}
+
+canvas {
+	background-color: #000000;
+	width: 100%;
+	height: 150px;
+	z-index: 2;
+}

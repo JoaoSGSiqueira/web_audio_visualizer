@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Audio Visualizer</title>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+	</head>
+  <audio id="audio">
+  <source src="data/night_dancer.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+  </audio>
+	<body>
+  <div id="top-right-square">
+  <div class="buttons-container">
+    <button id="playButton">Play</button>
+    <button id="pauseButton">Stop</button>
+    <select id="sourceSelector">
+      <option>Select an option</option>
+      <option value="file">File mp3</option>
+      <option value="microphone">Microfone</option>
+    </select>
+  </div>
+
+	<div id="audio-picture">
+    <img id="coverImage" alt="Audio Icon">
+  </div>
+  <div id="audio-info">
+    <p><strong>Title:</strong> <span id="title"></span></p>
+    <p><strong>Artist:</strong> <span id="artist"></span></p>
+    <p><strong>Album:</strong> <span id="album"></span></p>
+    <p><strong>Year:</strong> <span id="year"></span></p>
+  </div>
+		<div id="centered-container">
+			<canvas id="visualizer"></canvas>
+		</div>
+    <script src="node_modules/jsmediatags/dist/jsmediatags.min.js"></script>
+		<script type="module" src="visualizer.js"></script>
+    <script type="module" src="sound_media.js"></script>
+	</body>
+</html>
