@@ -1,0 +1,78 @@
+body {
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color: #1d1e22;
+}
+
+#center {
+	position: absolute;
+	width: 200px;
+	height: 230px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.slider {
+	width: 20px;
+	height: 200px;
+	position: relative;
+	top: 20%;
+	left: 20%;
+}
+
+.slider-track {
+	background-color: black;
+	width: 20px;
+	height: 100%;
+	position: relative;
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.slider-point {
+	background-color: #000000;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
+
+.slider-thumb {
+	width: 40px; /* Set the width of your slider thumb to be wider than the track */
+	height: 50px; /* Set the height of your slider thumb */
+	background-color: #3498db;
+	position: absolute;
+	cursor: grab;
+	align-self: center;
+	border-radius: 20%; /* Make sure the thumb has rounded corners */
+	transform: translateX(-50%); /* Center the thumb horizontally */
+}
+
+.knob {
+	position: relative; /* Change from absolute to relative to position the control point relative to this element */
+	width: 100px; /* Adjust the size as needed */
+	height: 100px;
+	border-radius: 50%;
+	background: #1d1e22;
+	border: 4px solid #000;
+	box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+	z-index: 1;
+	cursor: grab; /* Change the cursor to a grab cursor */
+}
+
+.knob-handler {
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background-color: rgb(255, 255, 255);
+	z-index: 2;
+	top: 15%; /* Position the control point at the center of the .knob element */
+	left: 50%;
+	transform: translate(-50%, -50%); /* Center the control point within the .knob */
+	user-select: none;
+}
